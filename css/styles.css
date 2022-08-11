@@ -592,7 +592,13 @@ img {
 	background: var(--dark-background);
 	outline: none;
 	cursor: pointer;
+	transition: border-color 250ms var(--timing-function);
 }
+.footer-input:hover,
+.footer-input:focus {
+	border-color: var(--link-color);
+}
+
 .footer-button {
 	display: flex;
 	align-items: center;
@@ -608,6 +614,13 @@ img {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	border-radius: 4px;
 	border: none;
+	cursor: pointer;
+	transition: background 250ms var(--timing-function);
+}
+
+.footer-button:hover,
+.footer-button:focus {
+	background: #188ce8;
 }
 
 .footer-icon-send {
@@ -770,8 +783,8 @@ img {
 	top: 50%;
 	left: 50%;
 
-	min-width: 528px;
-	min-height: 581px;
+	width: 528px;
+	height: 581px;
 	padding: 40px;
 
 	background-color: #ffffff;
@@ -780,6 +793,7 @@ img {
 	transform: translate(-50%, -50%) scale(1);
 	transition: transform 250ms var(--timing-function);
 }
+
 
 .button-close {
 	position: absolute;
@@ -809,7 +823,7 @@ img {
 
 .modal-title {
 	text-align: center;
-	padding-bottom: 12px;
+	margin-bottom: 12px;
 
 	font-weight: 700;
 	font-size: 20px;
@@ -823,8 +837,11 @@ img {
     flex-direction: column;
 }
 
+.comment-container {
+	margin-bottom: 20px;
+}
+
 .form-label {
-	margin-top: 10px;
 	margin-bottom: 4px;
 	font-weight: 400;
 	font-size: 12px;
@@ -843,7 +860,7 @@ img {
 	padding-left: 42px;
 	padding-top: 11px;
 	padding-bottom: 11px;	
-	transition: border-color 250ms var(--timing-function);
+	transition: border-color 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 
 .form-input:hover,
@@ -852,9 +869,16 @@ img {
 .comment-date:focus {
 	border-color: var(--link-color);
 }
+.form-input:hover ~ .icon,
+.form-input:focus ~ .icon {
+	fill: var(--link-color);
+}
+
+
 
 .form-field-wrapper {
 	position: relative;
+	margin-bottom: 10px;
 	transition: color 250ms var(--timing-function);
 }
 
@@ -869,11 +893,12 @@ img {
 	left: 15px;
 	transform: translateY(-50%);
 	fill: currentColor;
+	transition: fill 250ms var(--timing-function);
 }
 
-.comment-date {
+.textarea {
 	padding: 12px 16px;
-	margin-bottom: 20px;
+	height: 120px;
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 1.17;
@@ -882,56 +907,75 @@ img {
 	border-radius: 4px;
 	outline: none;
 	cursor: pointer;
+	resize: none;
 	transition: border-color 250ms var(--timing-function);
 }
 
-
-.label-checkbox {
+.form-checkbox {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	position: relative;
+	left: 13px;
+	margin-bottom: 30px;
 }
 
-.checkbox-icon-div {
-	display: flex;
-	border-radius: 2px;
-	width: 16px;
-	height: 15px;
-	transition: background-color 250ms var(--timing-function), border-color 250ms var(--timing-function);
-}
+.checkbox-icon-label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    cursor: pointer;
 
+}
 
 .checkbox {
 	appearance: none;
 	position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
-.checkbox-icon1 {
+.icon-check {
 	position: absolute;
+	opacity: 0;
+	left: 0;
+	top: 50%;
+	border-radius: 2px;
+	transform: translateY(-50%);
+	transition: opacity 250ms var(--timing-function);
 }
 
+.icon-no-check {
+	position: absolute;
+	opacity: 1;
+	left: 0;
+    top: 50%;
+	border-radius: 2px;
 
-.checkbox:checked+.checkbox-icon-div {
-    background-color: var(--link-color);
-	fill: var(--link-color);
+    transform: translateY(-50%);
+    transition: opacity 250ms var(--timing-function);
 }
 
-.checkbox:focus+.checkbox-icon-div {
-    border-color: var(--link-color);
+.checkbox:checked ~ .icon-check {
+	background: var(--link-color);
+	opacity: 1;
 }
 
-.form-policy {
-	margin-left: 8px;
-
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 1.71;
-	letter-spacing: 0.03em;
-	color: var(--secondary-text-color);
+.checkbox:checked ~ .icon-no-check {
+	opacity: 0;
 }
 
 .checkbox-link {
+	position: relative;
 	color: var(--link-color);
 }
 
@@ -940,7 +984,8 @@ img {
 	align-items: center;
 	text-align: center;
 	padding: 10px 52px;
-	margin: 30px auto 0;
+	margin-left: auto;
+	margin-right: auto;
 
 	font-weight: 700;
 	font-size: 16px;
