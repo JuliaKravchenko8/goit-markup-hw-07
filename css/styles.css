@@ -911,6 +911,11 @@ img {
 	transition: border-color 250ms var(--timing-function);
 }
 
+.textarea:hover,
+.textarea:focus	{
+	border-color: var(--link-color);
+}
+
 .form-checkbox {
 	display: flex;
 	align-items: center;
