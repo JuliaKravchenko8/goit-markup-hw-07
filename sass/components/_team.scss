@@ -65,14 +65,13 @@
 	border-radius: 50%;
 	color: $icon-color;
 	transition: color 250ms $timingFunction, background-color 250ms $timingFunction;
+
+	&:hover, &:focus {
+		color: $whiteTextColor;
+		background-color: $linkColor;}
+	
 }
 
 .soc__icon {
-	fill: $currentColor;
-}
-
-.soc__link {
-    &:hover, &:focus {
-	color: $whiteTextColor;
-	background-color: $linkColor;}
+	fill: currentColor;
 }
