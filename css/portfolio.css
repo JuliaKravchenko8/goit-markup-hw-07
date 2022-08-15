@@ -27,6 +27,40 @@ img {
   height: auto;
 }
 
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: auto;
+  color: #212121;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.section {
+  margin: auto;
+  display: block;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  max-width: 1600px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  padding: 0 15px;
+}
+
 @-webkit-keyframes animation-current {
   0% {
     -webkit-transform: scaleX(1);

@@ -824,7 +824,7 @@ img {
 }
 
 
-.button-close {
+.modal__button {
 	position: absolute;
 	padding: auto;
 	top: 8px;
@@ -842,15 +842,15 @@ img {
 	transition: color 250ms var(--timing-function);
 }
 
-.button-close:hover,
-.button-close:focus	{
+.modal__button:hover,
+.modal__button:focus	{
 	color: var(--link-color);
 }
-.close-icon {
+.modal__icon {
 	fill: currentColor;
 }
 
-.modal-title {
+.modal__title {
 	text-align: center;
 	margin-bottom: 12px;
 
@@ -861,16 +861,16 @@ img {
 	color: var(--primary-text-color);
 }
 
-.form-field {
+.form {
     display: flex;
     flex-direction: column;
 }
 
-.comment-container {
+.comment {
 	margin-bottom: 20px;
 }
 
-.form-label {
+.form__label {
 	margin-bottom: 4px;
 	font-weight: 400;
 	font-size: 12px;
@@ -879,7 +879,7 @@ img {
 	color: var(--secondary-text-color);
 }
 
-.form-input {
+.form__input {
 	width: 100%;
 	height: 40px;
 	outline: none;
@@ -892,31 +892,31 @@ img {
 	transition: border-color 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 
-.form-input:hover,
-.form-input:focus,
+.form__input:hover,
+.form__input:focus,
 .comment-date:hover,
 .comment-date:focus {
 	border-color: var(--link-color);
 }
-.form-input:hover ~ .icon,
-.form-input:focus ~ .icon {
+.form__input:hover ~ .form__icon,
+.form__input:focus ~ .form__icon {
 	fill: var(--link-color);
 }
 
 
 
-.form-field-wrapper {
+.form__wrapper {
 	position: relative;
 	margin-bottom: 10px;
 	transition: color 250ms var(--timing-function);
 }
 
-.form-field-wrapper:hover,
-.form-field-wrapper:focus {
+.form__wrapper:hover,
+.form__wrapper:focus {
 	color: var(--link-color);
 }
 
-.icon {
+.form__icon {
 	position: absolute;
 	top: 50%;
 	left: 15px;
@@ -925,7 +925,7 @@ img {
 	transition: fill 250ms var(--timing-function);
 }
 
-.textarea {
+.form__textarea {
 	padding: 12px 16px;
 	height: 120px;
 	font-weight: 400;
@@ -940,12 +940,12 @@ img {
 	transition: border-color 250ms var(--timing-function);
 }
 
-.textarea:hover,
-.textarea:focus	{
+.form__textarea:hover,
+.form__textarea:focus	{
 	border-color: var(--link-color);
 }
 
-.form-checkbox {
+.checkbox {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -955,7 +955,7 @@ img {
 	margin-bottom: 30px;
 }
 
-.checkbox-icon-label {
+.checkbox__label {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
@@ -964,7 +964,7 @@ img {
 
 }
 
-.checkbox {
+.checkbox__input {
 	appearance: none;
 	position: absolute;
     width: 1px;
@@ -978,7 +978,7 @@ img {
     overflow: hidden;
 }
 
-.icon-check {
+.checkbox__icon-check {
 	position: absolute;
 	opacity: 0;
 	left: 0;
@@ -988,7 +988,7 @@ img {
 	transition: opacity 250ms var(--timing-function);
 }
 
-.icon-no-check {
+.checkbox__icon-nocheck {
 	position: absolute;
 	opacity: 1;
 	left: 0;
@@ -999,21 +999,21 @@ img {
     transition: opacity 250ms var(--timing-function);
 }
 
-.checkbox:checked ~ .icon-check {
+.checkbox:checked ~ .checkbox__icon-check {
 	background: var(--link-color);
 	opacity: 1;
 }
 
-.checkbox:checked ~ .icon-no-check {
+.checkbox:checked ~ .checkbox__icon-nocheck {
 	opacity: 0;
 }
 
-.checkbox-link {
+.checkbox__link {
 	position: relative;
 	color: var(--link-color);
 }
 
-.form-button {
+.checkbox__button {
 	display: flex;
 	align-items: center;
 	text-align: center;
@@ -1034,8 +1034,8 @@ img {
 	transition: background-color 250ms var(--timing-function);
 }
 
-.form-button:hover,
-.form-button:focus {
+.checkbox__button:hover,
+.checkbox__button:focus {
 	background-color: #188CE8;
 }
 
