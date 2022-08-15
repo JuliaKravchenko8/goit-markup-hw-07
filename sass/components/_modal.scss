@@ -112,12 +112,12 @@
     border-color: $linkColor;}
 }
 
-.form__input:hover ~ .form__icon,
-.form__input:focus ~ .form__icon {
-	fill: $linkColor;
+.form__input {
+	&:hover, &:focus {
+		~ .form__icon {
+		fill: $linkColor;}
+	}
 }
-
-
 
 .form__wrapper {
 	position: relative;
@@ -219,18 +219,6 @@
     .checkbox__input:checked ~ & {
     	opacity: 0;}
 }
-
-// .checkbox:checked ~ .checkbox__icon-check {
-// 	background: $linkColor;
-// 	opacity: 1;
-// }
-
-// .checkbox:checked ~ .checkbox__icon-nocheck {
-// 	opacity: 0;
-// }
-
-
-
 
 .checkbox__link {
 	position: relative;
